@@ -1,0 +1,24 @@
+.user-view {
+    background: url('../../../assets/images/geometric-grapefruit.jpg');
+    padding: 32px 32px 16px;
+}
+
+.card-client-list .card-image img{
+    height: 160px;
+}
+
+.card-client-list .card-title {
+    padding: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.52);
+}
+
+.user-view .name { font-size:  20px; }
+
+.avatar {
+    height: 90px;
+}
+
+

@@ -1,27 +1,52 @@
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-<nav>
+<nav class="purple lighten-1">
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
+      <li><a href="sass.html">Home</a></li>
+      <li><a routerLink="/clients">Clients</a></li>
+
+      <li *ngIf="loggedIn; else login"><a [id]="'btn-sidenav-profile'" >Profile</a></li>
+      <ng-template #login>
+        <li><a (click)="openLogin()" >Login</a></li>
+      </ng-template>
     </ul>
   </div>
 </nav>
 
-<div class="container" style="height: 600px;">
-
-
-
-
+<div class="container div-base-content">
+    <router-outlet></router-outlet>
 </div>
 
-<footer class="page-footer">
+<mz-sidenav  *ngIf="loggedIn"  [id]="'sidenav-profile'" [collapseButtonId]="'btn-sidenav-profile'" [backgroundClass]="'header-side'">
+
+  <mz-sidenav-header>
+    <div class="user-view right-align">
+      <img class="circle avatar" src="../assets/images/avatar-test.png">
+      <div class="white-text name">Name LastName</div>
+      <div class="white-text email">Email@</div>
+    </div>
+  </mz-sidenav-header>
+
+  <mz-sidenav-subheader>User menu</mz-sidenav-subheader>
+  <mz-sidenav-link>
+    <a routerLink="/">Profile</a>
+  </mz-sidenav-link>
+  
+  <mz-sidenav-divider></mz-sidenav-divider>
+
+  <mz-sidenav-link >
+    <a routerLink="/">Active Link</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-divider></mz-sidenav-divider>
+
+  <mz-sidenav-link>
+    <a href="#" class="waves-effect">LogOut</a>
+  </mz-sidenav-link>
+
+</mz-sidenav>
+
+<footer class="page-footer purple lighten-1">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">

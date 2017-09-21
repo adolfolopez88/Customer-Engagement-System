@@ -1,0 +1,42 @@
+
+<mz-modal [fixedFooter]="false">
+
+  <mz-modal-header>
+    <h2 class="center-align"> Login</h2> 
+  </mz-modal-header>
+
+  <mz-modal-content>
+    <div class="row">
+      
+      <div class="col l7 xl7">
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix
+            [icon]="'email'"></i>
+
+          <input mz-input [(ngModel)]="user.email" [label]="'Email'" [validate]="true" [dataError]="'Email is invalid'"
+            [dataSuccess]="'Email is valid'" length="150" type="email"/>
+        </mz-input-container>
+    
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix
+            [icon]="'key'"></i>
+
+          <input mz-input [(ngModel)]="user.password" [label]="'Password'"
+            [validate]="true" length="150" type="password"/>
+        </mz-input-container>
+      
+        <button mz-button (click)="login()"> Login</button>
+      </div>
+
+      <div  class="col l5 xl5">
+          <button mz-button class="button-full-width"> Reset your password</button>
+          <br> 
+          <br>
+          <button mz-button class="button-full-width"> Sing in</button> 
+      </div>
+
+    </div> 
+  </mz-modal-content>
+</mz-modal>
+
+      

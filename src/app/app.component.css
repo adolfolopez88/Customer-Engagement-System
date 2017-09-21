@@ -1,0 +1,14 @@
+.user-view {
+    background: url('../assets/images/geometric-sun.jpg');
+    padding: 32px 32px 16px;
+}
+
+.user-view .name { font-size:  20px; }
+
+.avatar {
+    height: 90px;
+}
+
+.div-base-content {
+    min-height: 500px;
+}
