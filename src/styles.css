@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: #546e7a;
+}
+
 .header-side .sidenav-header{
     background-image: url("./assets/images/geometric-sun.jpg");
     height: 250px;
  }
+
+div.div-form-content {
+    margin: 0 auto !important;
+}
+
+.container .base-parallax .parallax-container {
+    z-index: 0;
+}
+

@@ -1,21 +1,20 @@
 <nav class="purple lighten-1">
   <div class="nav-wrapper">
+    
     <a href="#!" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Home</a></li>
-      <li><a routerLink="/clients">Clients</a></li>
 
-      <li *ngIf="loggedIn; else login"><a [id]="'btn-sidenav-profile'" >Profile</a></li>
-      <ng-template #login>
-        <li><a (click)="openLogin()" >Login</a></li>
-      </ng-template>
+    <ul class="right hide-on-med-and-down">
+      <li routerLinkActive="active"><a href="/" >Home</a></li>
+      <li routerLinkActive="active"><a routerLink="/clients" >Clients</a></li>
+      <li *ngIf="loggedIn" ><a [id]="'btn-sidenav-profile'">Profile</a></li>
     </ul>
+
   </div>
 </nav>
 
-<div class="container div-base-content">
-    <router-outlet></router-outlet>
-</div>
+
+<router-outlet  class="div-base-content"></router-outlet>
+
 
 <mz-sidenav  *ngIf="loggedIn"  [id]="'sidenav-profile'" [collapseButtonId]="'btn-sidenav-profile'" [backgroundClass]="'header-side'">
 
@@ -29,7 +28,7 @@
 
   <mz-sidenav-subheader>User menu</mz-sidenav-subheader>
   <mz-sidenav-link>
-    <a routerLink="/">Profile</a>
+      <a  href="/clients/profile">Profile</a>
   </mz-sidenav-link>
   
   <mz-sidenav-divider></mz-sidenav-divider>

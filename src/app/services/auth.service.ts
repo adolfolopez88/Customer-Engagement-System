@@ -8,13 +8,17 @@ export class AuthService {
     this.isLogged();
   }
 
-  Login(username: string, password: string) {
+  Login(email: string, password: string) {
 
-    return this.authFirebase.auth.signInWithEmailAndPassword(username, password);
+    return this.authFirebase.auth.signInWithEmailAndPassword(email, password);
   }
 
   isLogged() {
 
     return this.authFirebase.authState;
+  }
+
+  signIn(email: string, password: string) {
+    return this.authFirebase.auth.createUserWithEmailAndPassword(email, password);
   }
 }

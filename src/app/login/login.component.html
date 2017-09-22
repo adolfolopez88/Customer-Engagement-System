@@ -1,42 +1,47 @@
+<div class="container">
 
-<mz-modal [fixedFooter]="false">
+  <mz-parallax [height]="500" class="base-parallax">
+    <img src="../../../assets/images/poly4.jpg"/>
 
-  <mz-modal-header>
-    <h2 class="center-align"> Login</h2> 
-  </mz-modal-header>
+    <br><br>
+       
+    <mz-card [backgroundClass]="'blue-grey darken-1 container div-form-content'" [textClass]="'white-text'" [hoverable]="true">
 
-  <mz-modal-content>
-    <div class="row">
-      
-      <div class="col l7 xl7">
-        <mz-input-container>
-          <i mz-icon-mdi mz-input-prefix
-            [icon]="'email'"></i>
+    <mz-card-title> Login </mz-card-title>
 
-          <input mz-input [(ngModel)]="user.email" [label]="'Email'" [validate]="true" [dataError]="'Email is invalid'"
-            [dataSuccess]="'Email is valid'" length="150" type="email"/>
-        </mz-input-container>
-    
-        <mz-input-container>
-          <i mz-icon-mdi mz-input-prefix
-            [icon]="'key'"></i>
+    <mz-card-content>
+      <div class="row">
+          <div class="col l7 xl7">
 
-          <input mz-input [(ngModel)]="user.password" [label]="'Password'"
-            [validate]="true" length="150" type="password"/>
-        </mz-input-container>
-      
-        <button mz-button (click)="login()"> Login</button>
+              <mz-input-container>
+                <i mz-icon-mdi mz-input-prefix
+                  [icon]="'email'"></i>
+        
+              <input mz-input [(ngModel)]="user.email" [label]="'Email'" [validate]="true" [dataError]="'Email is invalid'"
+                  [dataSuccess]="'Email is valid'" length="150" type="email"/>
+              </mz-input-container>
+        
+              <mz-input-container>
+                <i mz-icon-mdi mz-input-prefix
+                  [icon]="'key'"></i>
+        
+                <input mz-input [(ngModel)]="user.password" [label]="'Password'"
+                  [validate]="true" length="150" type="password"/>
+              </mz-input-container>
+            
+              <button mz-button (click)="login()"> Login</button>
+          </div>
+
+          <div class="col l5 xl5">
+              <button mz-button class="button-full-width"> FORGOT YOU PASSWORD?</button>
+              <br><br>
+              <a mz-button class="button-full-width" routerLink="/signin" > SIGN IN</a>
+          </div>
       </div>
+    </mz-card-content>
 
-      <div  class="col l5 xl5">
-          <button mz-button class="button-full-width"> Reset your password</button>
-          <br> 
-          <br>
-          <button mz-button class="button-full-width"> Sing in</button> 
-      </div>
+  </mz-card>
+  </mz-parallax>
 
-    </div> 
-  </mz-modal-content>
-</mz-modal>
+</div> 
 
-      

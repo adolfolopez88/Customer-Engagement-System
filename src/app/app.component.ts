@@ -1,5 +1,4 @@
 import { AuthService } from './services/auth.service';
-import { LoginComponent } from './login/login.component';
 import { Component } from '@angular/core';
 import { MzModalService } from 'ng2-materialize';
 
@@ -24,9 +23,5 @@ export class AppComponent {
       }, (error) => {
         this.loggedIn = false;
       });
-  }
-
-  openLogin() {
-    this.modalService.open(LoginComponent, {});
   }
 }

@@ -1,3 +1,4 @@
+import { LoginModule } from './login/login.module';
 import { ClientsModule } from './clients/clients.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
@@ -25,12 +26,12 @@ export const firebaseConfig = {
 
 const routes: Routes =  [
   { path: 'clients', loadChildren: './clients/clients.module#ClientsModule' },
+  { path: '', loadChildren: './login/login.module#LoginModule' },
 ]
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +42,10 @@ const routes: Routes =  [
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RouterModule.forRoot(routes),
-    ClientsModule
+    ClientsModule,
+    LoginModule
   ],
-  entryComponents: [LoginComponent],
+  entryComponents: [],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,39 @@
+<div class="container">
+    
+  <mz-parallax [height]="500" class="base-parallax">
+    <img src="../../../assets/images/poly4.jpg"/>
+
+    <br><br>
+        
+    <mz-card [backgroundClass]="'blue-grey darken-1 container div-form-content'" [textClass]="'white-text'" [hoverable]="true">
+
+    <mz-card-title> Signin </mz-card-title>
+
+    <mz-card-content>
+
+      <div class="container">
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix
+            [icon]="'email'"></i>
+  
+        <input mz-input [(ngModel)]="user.email" [label]="'Email'" [validate]="true" [dataError]="'Email is invalid'"
+            [dataSuccess]="'Email is valid'" length="150" type="email"/>
+        </mz-input-container>
+  
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix
+            [icon]="'key'"></i>
+  
+          <input mz-input [(ngModel)]="user.password" [label]="'Password'"
+            [validate]="true" length="150" type="password"/>
+        </mz-input-container>
+      
+        <button mz-button (click)="signIn()"> SingIn</button>
+        <a mz-button routerLink="/login"> Cancel</a>
+      </div>
+    </mz-card-content>
+
+    </mz-card>
+  </mz-parallax>
+    
+</div> 
