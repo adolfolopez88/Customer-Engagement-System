@@ -1,4 +1,4 @@
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { MzModalComponent } from 'ng2-materialize/dist';
 import { Component, OnInit } from '@angular/core';
 

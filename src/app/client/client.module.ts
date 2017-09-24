@@ -6,11 +6,9 @@ import { ListComponent } from './list/list.component';
 
 import { MaterializeModule } from 'ng2-materialize/dist';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: 'clients', component: ListComponent},
-  { path: 'clients/profile', component: ProfileComponent},
 ];
 
 @NgModule({
@@ -20,10 +18,10 @@ const routes: Routes = [
     MaterializeModule,
     BrowserAnimationsModule
   ],
-  declarations: [ListComponent, ProfileComponent],
+  declarations: [ListComponent],
   providers: [ClientsService],
 })
-export class ClientsModule {
+export class ClientModule {
 
 
 

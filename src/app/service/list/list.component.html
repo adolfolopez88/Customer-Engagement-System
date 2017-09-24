@@ -1,0 +1,37 @@
+<div class="row div-content" style="height:500px;">
+  <div class="col l3 xl3 div-filters" >
+    <h5>Search Service.</h5>
+    
+    <br>
+    <mz-input-container class="col s12">
+      <i class="material-icons prefix">store</i>
+      <input mz-input
+      [label]="'Service name'"
+      [validate]="true"
+      placeholder="Enter service name"
+      length="150"
+      type="text">
+    </mz-input-container>
+    
+    <br>
+    <mz-select-container class="col s12">
+      <i class="material-icons prefix">layers</i>
+      <select multiple mz-select
+        id="options-select"
+        [label]="'Service type'"
+        [placeholder]="'Placeholder'">
+    
+        <option >Option 1</option>
+        <option >Option 2</option>
+        <option >Option 3</option>
+      </select>
+    </mz-select-container>
+
+    <div class="col l5 xl5">
+        <button mz-button> Search</button>
+    </div>
+  </div>
+  <div class="col l9 xl9" >contenido</div>
+
+  
+</div>

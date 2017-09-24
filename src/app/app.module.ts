@@ -1,5 +1,6 @@
-import { LoginModule } from './login/login.module';
-import { ClientsModule } from './clients/clients.module';
+import { ServiceModule } from './service/service.module';
+import { UserModule } from './user/user.module';
+import { ClientModule } from './client/client.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +10,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -25,8 +25,9 @@ export const firebaseConfig = {
 };
 
 const routes: Routes =  [
-  { path: 'clients', loadChildren: './clients/clients.module#ClientsModule' },
-  { path: '', loadChildren: './login/login.module#LoginModule' },
+  { path: 'clients', loadChildren: './client/client.module#ClientModule' },
+  { path: 'services', loadChildren: './service/service.module#ServiceModule' },
+  { path: '', loadChildren: './user/user.module#UserModule' },
 ]
 
 @NgModule({
@@ -42,8 +43,9 @@ const routes: Routes =  [
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RouterModule.forRoot(routes),
-    ClientsModule,
-    LoginModule
+    ClientModule,
+    UserModule,
+    ServiceModule
   ],
   entryComponents: [],
   providers: [AuthService],
