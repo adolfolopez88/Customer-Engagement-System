@@ -2,11 +2,13 @@
     background: url('../../../assets/images/geometric-grapefruit.jpg');
     padding: 32px 32px 16px;
 }
+
 .card-client-list .card-image {
     padding-top: 4px;
     background: url('../../../assets/images/geometric-grapefruit.jpg');
 }
-.card-client-list .card-image img{
+
+.card-client-list .card-image img {
     height: 160px;
 }
 
@@ -18,14 +20,29 @@
     background: rgba(0, 0, 0, 0.52);
 }
 
-.user-view .name { font-size:  20px; }
+.user-view .name {
+  font-size:  20px;
+}
 
 .avatar {
     height: 90px;
     width: 85px;
 }
 
-.card-action a{
+.card-action a {
     cursor: pointer;
 }
 
+.div-content {
+    height:600px;
+    margin-bottom: 0px;
+}
+
+.div-filters {
+    background: white;
+    height: 100%;
+}
+
+.div-content-result {
+    height: 100%;
+}

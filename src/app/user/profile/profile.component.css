@@ -25,3 +25,7 @@
 ul.tabs li a {
     color: white;
 }
+
+.div-tab-content {
+    margin-bottom: 0px;
+}

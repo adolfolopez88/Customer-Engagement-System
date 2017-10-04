@@ -1,3 +1,5 @@
+import { HttpModule } from '@angular/http';
+import { PlaceService } from '../services/place.service';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
@@ -14,7 +16,7 @@ const routes: Routes =  [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile/:id', component: ProfileComponent}
 ]
 
 @NgModule({
@@ -24,12 +26,16 @@ const routes: Routes =  [
     MaterializeModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpModule
   ],
   declarations: [
     LoginComponent,
     SigninComponent,
     ProfileComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+  ],
+  providers: [
+    PlaceService,
   ]
 })
 export class UserModule { }

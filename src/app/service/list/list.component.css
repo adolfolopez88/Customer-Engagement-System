@@ -5,4 +5,10 @@
 
 .div-content {
     margin-bottom: 0px;
+    height:600px;
+}
+
+.div-content-result {
+    min-height: 100%;
+
 }

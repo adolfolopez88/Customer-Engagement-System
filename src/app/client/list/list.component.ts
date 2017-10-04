@@ -1,4 +1,4 @@
-import { ClientsService } from '../../services/clients.service';
+import { UserService } from '../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  clients: any = {};
+  clients: any = [];
+  client: any = {};
 
-  constructor(private clientsService: ClientsService) { }
+  constructor(private clientsService: UserService) { }
 
   ngOnInit() {
-    this.clients = this.clientsService.getClients();
+    this.clientsService.getUsers().then(users => { console.log(users); this.clients = users; });
   }
 
-  showNavClient() {
-    document.getElementById('btn-sidenav-client').click();
-  }
+  showNavClient(client_id: number) {
 
+    this.clientsService.getUser(client_id).then(user => {
+      console.log(user); this.client = user;
+      document.getElementById('btn-sidenav-client').click();
+    });
+
+  }
 }

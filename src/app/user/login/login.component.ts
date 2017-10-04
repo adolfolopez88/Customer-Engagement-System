@@ -17,7 +17,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // console.log(this.user);
-    this.authService.Login(this.user.email,  this.user.password).then(user => console.log(user) );
+
+    this.authService.Login(this.user.email,  this.user.password);
+  }
+
+  loginByFacebook() {
+    this.authService.loginByFacebook()
   }
 }

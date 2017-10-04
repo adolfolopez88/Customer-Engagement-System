@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ClientsService } from '../services/clients.service';
+import { UserService } from '../services/user.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
     BrowserAnimationsModule
   ],
   declarations: [ListComponent],
-  providers: [ClientsService],
+  providers: [UserService],
 })
 export class ClientModule {
 

@@ -14,9 +14,6 @@ export class SigninComponent implements OnInit {
   }
 
   signIn() {
-    this.authService.signIn(this.user.email, this.user.password).then((result) => {
-      alert('all good');
-      window.location.href = '/clients';
-    });
+    this.authService.signIn(this.user.email, this.user.password);
   }
 }

@@ -1,41 +1,77 @@
-<div class="container">
-    
-    <div class="row">
-        
+<div class="row div-content">
+
+    <div class="col l3 xl3 div-filters" >
+      <h5>Search Client.</h5>
+
+      <br>
+      <mz-input-container class="col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input mz-input
+        [label]="'Client name'"
+        [validate]="true"
+        placeholder="Enter service name"
+        length="150"
+        type="text">
+      </mz-input-container>
+
+      <br>
+      <mz-select-container class="col s12">
+        <i class="material-icons prefix">account_box</i>
+        <select multiple mz-select
+          id="options-select"
+          [label]="'Client type'"
+          [placeholder]="'Placeholder'">
+
+          <option >Option 1</option>
+          <option >Option 2</option>
+          <option >Option 3</option>
+        </select>
+      </mz-select-container>
+
+      <div class="col l5 xl5">
+          <button mz-button> Search</button>
+      </div>
+
+      <br>
+    </div>
+
+    <div class="col l9 xl9 div-content-result">
+
         <div *ngFor="let client of clients" class="col s12 m4 l2 xl2">
             <div class="card card-client-list">
             <div class="card-image">
-                <img src="../../../assets/images/face-test.jpg">
-                <span class="card-title">Adolfo Lopez</span>
+                <img src="{{client.avatar}}">
+                <span class="card-title">{{client.first_name +' '+ client.last_name }}
+                </span>
             </div>
             <div class="card-action">
-                <a (click)="showNavClient()" >Profile</a>     
+                <a (click)="showNavClient(client.id)" >Profile</a>
             </div>
             </div>
         </div>
-    </div>
 
-    <a [id]="'btn-sidenav-client'" type="hidden"></a>
+        <a [id]="'btn-sidenav-client'" type="hidden"></a>
+    </div>
 </div>
 
 <mz-sidenav [id]="'sidenav-client'" [collapseButtonId]="'btn-sidenav-client'" [edge]="'right'" >
 
     <mz-sidenav-header>
         <div class="user-view right-left">
-            <img class="circle avatar" src="../assets/images/face-test.jpg">
-            <div class="white-text name">Name LastName</div>
-            <div class="white-text email">Email@</div>
+            <img class="circle avatar" src="{{client.avatar}}">
+            <div class="white-text name">{{client.first_name + client.last_name}}</div>
+            <div class="white-text email">{{client.email}}</div>
         </div>
     </mz-sidenav-header>
 
     <mz-sidenav-subheader>Client Data</mz-sidenav-subheader>
 
     <mz-sidenav-link>
-        <a  href="/profile">Profile</a>
+        <a  href="/profile/{{client.id}}">Profile</a>
     </mz-sidenav-link>
 
     <mz-sidenav-divider></mz-sidenav-divider>
-    
+
     <mz-sidenav-link [active]="true">
         <a href="#">Active Link</a>
     </mz-sidenav-link><mz-sidenav-link [active]="true">

@@ -4,7 +4,7 @@
     <img src="../../../assets/images/poly3.jpg"/>
 
     <br><br>
-       
+
     <mz-card [backgroundClass]="'blue-grey darken-1 container div-form-content'" [textClass]="'white-text'" [hoverable]="true">
 
     <mz-card-title> Login </mz-card-title>
@@ -16,19 +16,19 @@
               <mz-input-container>
                 <i mz-icon-mdi mz-input-prefix
                   [icon]="'email'"></i>
-        
+
               <input mz-input [(ngModel)]="user.email" [label]="'Email'" [validate]="true" [dataError]="'Email is invalid'"
                   [dataSuccess]="'Email is valid'" length="150" type="email"/>
               </mz-input-container>
-        
+
               <mz-input-container>
                 <i mz-icon-mdi mz-input-prefix
                   [icon]="'key'"></i>
-        
+
                 <input mz-input [(ngModel)]="user.password" [label]="'Password'"
                   [validate]="true" length="150" type="password"/>
               </mz-input-container>
-            
+
               <button mz-button (click)="login()"> Login</button>
           </div>
 
@@ -36,6 +36,8 @@
               <button mz-button class="button-full-width"> FORGOT YOU PASSWORD?</button>
               <br><br>
               <a mz-button class="button-full-width" routerLink="/signin" > SIGN IN</a>
+              <br><br>
+              <a mz-button class="button-full-width" (click)="loginByFacebook()" > FACEBOOK</a>
           </div>
       </div>
     </mz-card-content>
@@ -43,5 +45,5 @@
   </mz-card>
   </mz-parallax>
 
-</div> 
+</div>
 
